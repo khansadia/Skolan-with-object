@@ -5,15 +5,16 @@ let OxhagSchool ={
     Postcode: 16432,
     City: 'Kista',
     Students: [],
-    Teachers: [],
+    teachers: [],
     subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     },
-    addSubject: function (teacher){
+    addTeacher: function (teacher){
         this.teachers.push(teacher);
     },
-    addStudent: function (student){
+    
+    addStudent: function(student){
         this.students.push(student);
     },
     removeStudent: function (student) {
@@ -71,7 +72,7 @@ let Khan = {
     name:"Khan",
     age: 35,
     gender: "Female",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     },
@@ -82,7 +83,7 @@ let Saad = {
     name:"Saad",
     age: 30,
     gender: "Male",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     },
@@ -93,7 +94,7 @@ let Sadia = {
     name:"Sadia",
     age: 28,
     gender: "Female",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     },
@@ -104,7 +105,7 @@ let Adam = {
     name:"Adam",
     age: 18,
     gender: "Male",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     },
@@ -114,7 +115,7 @@ let Aena = {
     name:"Aena",
     age: 18,
     gender: "Female",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     },
@@ -123,37 +124,89 @@ let Aena = {
 // Skapa två stycken lärare med namnet som variabel och egenskaperna name och subjects som en tom array.
 let Tomas = {
     name:"Tomas",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     }
 };
 let Niklas = {
     name:"Niklas",
-    subject: [],
+    subjects: [],
     addSubject: function (subject){
         this.subjects.push(subject);
     }
 };
 //Skriv en kodrad där du lägger till ett ämne i en lärares ämnesarray. push() eller unshift() Kommer du ihåg skillnaden på dem två?
- Niklas.subject.push(matematik);
+ Niklas.subjects.push(matematik);
  console.log(Niklas);
  console.log(Niklas.subject);
 
-Tomas.subject.push(programming);
+Tomas.subjects.push(programming);
 console.log(Tomas);
 console.log(Tomas.subject);
 
-Aena.subject.push(matematik);
+Niklas.addSubject = function(subject){
+    this.subjects.push(this.subjects)
+}
+Niklas.addSubject(svenska);
+console.log(Niklas);
+console.log(Niklas.subject);
+
+Aena.subjects.push(matematik);
 console.log(Aena); 
 // eller kan man göra så
 /* matematik.teachers = Niklas;
 console.log(matematik);
-const addSubjectToTeacher = (_subject, _teacher) => {
-    _teacher.subjects.push(_subject);
-     _subject.teachers = _teacher
+const addSubjectToTeacher = (_subjects, _teacher) => {
+    _teacher.subjects.push(_subjects);
+     _subjects.teachers = _teacher
  }
  addSubjectToTeacher(programming, Tomas);
 
  console.log(Niklas); */
+
+
+ // ---Adding Teachers and Students in a School
+ //OxhagSchool.addTeacher(Niklas);
+ //OxhagSchool.addTeacher(Tomas);
+ //OxhagSchool.addStudent(Khan);
+ //OxhagSchool.addStudent(Saad);
+ //OxhagSchool.addStudent(Sadia);
+  //OxhagSchool.addStudent(Adam);
+ //OxhagSchool.addStudent(Aena);
+ // ---Adding Teachers and Students in a Subjects
+ //matematik.addTeacher(Niklas);
+// matematik.addStudent(Khan);
+// matematik.addStudent(Adam);
+// science.addTeacher(Tomas);
+// science.addStudent(Aena);
+// science.addStudent(Khan);
+// english.addTeacher(Niklas);
+// english.addStudent(Sadia);
+// english.addStudent(Saad);
+// english.addStudent(Aena);
+//Niklas.addSubject(matematik);
+// Niklas.addSubject(svenska);
+// Tomas.addSubject(svenska);
+// Khan.addSubject(matematik);
+ //Khan.addSubject(programming);
+// Aena.addSubject(matematik);
+// Adam.addSubject(svenska);
+// Saad.addSubject(svenska);
+// Khan.addSubject(svenska);
+ //Adam.addSubject(programming);
+
+console.log(OxhagSchool);
+ console.log(Niklas.subjects);
+//console.log(Khan.subjects);
+ console.log(matematik.teachers);
+ console.log(programming.students);
+
+ // To remove student--------
+ //OxhagSchool.removeStudent(Khan);
+  //matematik.removeStudent(Khan);
+  //programming.removeStudent(Adam);
+  //console.log(OxhagSchool);
+ //console.log(programming);
+ 
  
