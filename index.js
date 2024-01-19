@@ -208,5 +208,96 @@ console.log(OxhagSchool);
   //programming.removeStudent(Adam);
   //console.log(OxhagSchool);
  //console.log(programming);
+
+
+ //Ny bygger vi på det lite. För att undvika att behöva anropa massa metoder i konsolen när vi startar om programmet (vilket händer vid varje redigering av script-filen) så kan vi längst ner i script-filen skapa 
+OxhagSchool.Students.push(Khan, Saad, Sadia, Adam, Aena);
+OxhagSchool.subjects.push(matematik, svenska, programming);
+OxhagSchool.teachers.push(Niklas, Tomas);
+
+const assignSubjectToStudentAndTeacher = (_subject, _student, _teacher) => {
+    _student.addSubject(_subject);
+    _subject.addStudent(_student);
+    _teacher.addSubject(_subject);
+    _subject.addTeacher(_teacher);
+}
+assignSubjectToStudentAndTeacher(matematik, Khan, Niklas);
+assignSubjectToStudentAndTeacher(matematik, Saad, Niklas);
+assignSubjectToStudentAndTeacher(programming, Aena, Niklas);
+assignSubjectToStudentAndTeacher(matematik, Adam, Niklas);
+assignSubjectToStudentAndTeacher(programming, Saad, Niklas);
+assignSubjectToStudentAndTeacher(svenska, Sadia, Tomas);
+assignSubjectToStudentAndTeacher(svenska, Adam, Tomas);
+
+console.log(OxhagSchool);
+//---To displayAllStudents  Names---
+
+const displayAllStudents = () => {
+    for (key in OxhagSchool.students){
+        console.log(OxhagSchool.students[key]);
+    }
+}
+
+const displayStudentsNames = () => {
+    for (key in OxhagSchool.students){
+        console.log(OxhagSchool.students[key].name);
+    }
+}
+
+ displayAllStudents();
+ displayStudentsNames();
+
+
+// --- Skapa nu fler funktioner, *displayAllSubjectsOfStudent(student)*, *displayAllStudentsEnlistedToSubject(subject)*, *displayAllTeachers*.
+ // To display All Teachers
+const displayAllTeachers = () => {
+    for (key in OxhagSchool.teachers){
+        console.log(OxhagSchool.teachers[key]);
+    }
+}
+displayAllTeachers();
+
+const displayAllSubjectsOfStudent = (_student) => {
+    for (key in _student){
+        if (key === 'subjects'){
+            console.log(_student[key]);
+        }
+    }
+}
+displayAllSubjectsOfStudent(Saad);
+
+
+const displayAllStudentsEnlistedToSubject = (_subject) => {
+    for (key in _subject){
+        if (key === 'students'){
+            console.log(_subject[key]);
+        }
+    }
+}
+displayAllStudentsEnlistedToSubject(svenska);
+
+
+ // --To show the Grades f students--
+
+ const grades = {
+    marks: [],
+    addSubject: function (subject) {
+        this.subjects.push(subject);
+    },
+    addStudent: function (student) {
+        this.students.push(student);
+    },
+    addGrade: function(student, subject, grade){
+        this.marks.push(`${student}'s grade in ${subject} is ${grade}`);
+    }
+};
+
+grades.addGrade(Khan.name, matematik.name, 78);
+grades.addGrade(Saad.name, programming.name, 69);
+grades.addGrade(Aena.name, programming.name, 82);
+grades.addGrade(Adam.name, svenska.name, 76);
+console.log(grades.marks);
+
+
  
  
